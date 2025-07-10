@@ -1,41 +1,103 @@
 const FriendshipTimeline = () => {
   const milestones = [
     {
-      year: "2020",
+      date: "Jan 2022",
+      title: "First Time I Saw You",
+      description:
+        "Heard your voice for the first time during your MATLAB viva — you were explaining simulations, wearing blue overhead headphones 🎧.",
+      icon: "🎤",
+    },
+    {
+      date: "May 2022",
       title: "First Meeting",
-      description: "The day our paths crossed and an amazing friendship began! Who knew that random encounter would lead to this? 🌟",
-      icon: "👋"
+      description:
+        "Our paths crossed and an amazing friendship began! Study sessions before exams became our thing 📚",
+      icon: "👋",
     },
     {
-      year: "2021",
-      title: "Adventure Buddies",
-      description: "Our first big adventure together - that spontaneous road trip that cemented our friendship forever! 🚗",
-      icon: "🗺️"
+      date: "Dec 2022",
+      title: "Special Birthday",
+      description:
+        "Made my birthday the best one yet - a day full of joy and unforgettable memories 🎂",
+      icon: "🎉",
     },
     {
-      year: "2022",
-      title: "Coffee Shop Regulars",
-      description: "Found our perfect hangout spot! Countless hours of deep conversations and terrible jokes over amazing coffee ☕",
-      icon: "☕"
+      date: "Mar 2023",
+      title: "Distance",
+      description:
+        "You went far away and started a new chapter, but true friendship knows no distance 🌍",
+      icon: "✈️",
     },
     {
-      year: "2023",
-      title: "Through Thick & Thin",
-      description: "The year we proved true friendship means being there for each other no matter what. You're amazing! 💪",
-      icon: "🤝"
+      date: "12 May 2023",
+      title: "Dance Together",
+      description:
+        "We danced like nobody was watching - a beautiful moment of reconnection 💃",
+      icon: "🕺",
     },
     {
-      year: "2024",
-      title: "Unbreakable Bond",
-      description: "Here we are, stronger than ever! Thank you for being the most incredible friend anyone could ask for 💖",
-      icon: "❤️"
+      date: "22 Dec 2023",
+      title: "Reunion",
+      description:
+        "You came back into my life, proving some bonds can never be broken 💫",
+      icon: "✨",
     },
     {
-      year: "2025",
-      title: "Many More Adventures",
-      description: "This is just the beginning! Can't wait to see what amazing memories we'll create this year and beyond! 🚀",
-      icon: "🌟"
-    }
+      date: "1 Jan 2024",
+      title: "New Beginnings",
+      description:
+        "Started the new year together, creating new memories and strengthening our bond 🎆",
+      icon: "🎇",
+    },
+    {
+      date: "26-27 Jan 2024",
+      title: "Weekend Getaway",
+      description:
+        "Sanibarbada and Friendship Bar - two days of laughter and fun that brought us even closer 🍻",
+      icon: "🍹",
+    },
+    {
+      date: "12 May 2024",
+      title: "Spiritual Visit",
+      description:
+        "Visited Swaminarayan Temple together, a peaceful and meaningful experience 🕉️",
+      icon: "🛕",
+    },
+    {
+      date: "19 May 2024",
+      title: "Aga Place",
+      description:
+        "Another wonderful memory added to our collection of shared experiences 🌟",
+      icon: "⭐",
+    },
+    {
+      date: "14 July 2024",
+      title: "Pataleshwar",
+      description:
+        "Explored the ancient caves together, discovering history and making our own story 🏛️",
+      icon: "🔦",
+    },
+    {
+      date: "15 Sep 2024",
+      title: "Dagrusheth",
+      description:
+        "Visited the famous temple, another beautiful memory in our journey together 🕌",
+      icon: "🕌",
+    },
+    {
+      date: "6 Dec 2024",
+      title: "Birthday Celebration",
+      description:
+        "Another year, another amazing birthday celebration together! 🎂✨",
+      icon: "🎈",
+    },
+    {
+      date: "22 Jun 2025",
+      title: "Sinhagad Adventure",
+      description:
+        "Conquered Sinhagad Fort together - the view was amazing, but the company was even better! ⛰️",
+      icon: "🥾",
+    },
   ];
 
   return (
@@ -43,12 +105,12 @@ const FriendshipTimeline = () => {
       <div className="relative">
         {/* Timeline Line */}
         <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
-        
+
         {milestones.map((milestone, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`relative flex items-center mb-12 animate-float ${
-              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             style={{ animationDelay: `${index * 0.2}s` }}
           >
@@ -56,15 +118,25 @@ const FriendshipTimeline = () => {
             <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-lg border-4 border-background animate-pulse-glow">
               {milestone.icon}
             </div>
-            
+
             {/* Content */}
-            <div className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+            <div
+              className={`ml-20 md:ml-0 md:w-1/2 ${
+                index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+              }`}
+            >
               <div className="card-glow p-6 group hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl font-bold text-gradient">{milestone.year}</span>
-                  <h3 className="text-xl font-semibold text-foreground">{milestone.title}</h3>
+                  <span className="text-2xl font-bold text-gradient">
+                    {milestone.date}
+                  </span>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {milestone.title}
+                  </h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {milestone.description}
+                </p>
               </div>
             </div>
           </div>

@@ -17,9 +17,21 @@ const BirthdayCountdown = () => {
   const [isBirthdayToday, setIsBirthdayToday] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date("2025-06-11T00:00:00").getTime();
+    const getNextBirthday = () => {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      // Create a date for this year's birthday (June 19th)
+      const birthdayThisYear = new Date(currentYear, 6, 12); // Month is 0-indexed, so 5 = June
+
+      // If birthday has already passed this year, use next year's date
+      if (now > birthdayThisYear) {
+        return new Date(currentYear + 1, 6, 12);
+      }
+      return birthdayThisYear;
+    };
 
     const updateCountdown = () => {
+      const targetDate = getNextBirthday().getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -49,7 +61,7 @@ const BirthdayCountdown = () => {
   if (isBirthdayToday) {
     return (
       <div className="text-center">
-        <h1 className="text-6xl font-bold text-gradient animate-pulse-glow p-4 mb-4">
+        <h1 className="text-6xl font-bold text-gradient  p-4 mb-4">
           🎉 HAPPY BIRTHDAY! 🎉
         </h1>
         <p className="text-2xl text-celebration animate-bounce-gentle">
